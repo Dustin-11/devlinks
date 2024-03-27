@@ -24,7 +24,7 @@ export default function Signin() {
                     </div> 
                     : 
                     <div className="flex flex-col items-center mt-5">
-                        <p className="text-customGrey">Dont have an account?</p>
+                        <p className="text-customGrey">Don't have an account?</p>
                         <a onClick={navigatePage} className="text-customPurple">Create an account</a>
                     </div>
                 }
