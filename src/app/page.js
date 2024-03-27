@@ -9,12 +9,7 @@ import Login from "./components/login";
 export default function Signin() {
   const [page, setPage] = useState(0)
   const navigatePage = () => {
-      if(page != 1) {
-          setPage(1);
-      }
-      else {
-          setPage(0);
-      }
+      setPage(prevPage => prevPage === 0 ? 1 : 0)
   }
   return (
     <main className="flex min-h-screen flex-col items-center p-6 font-customRegular 
