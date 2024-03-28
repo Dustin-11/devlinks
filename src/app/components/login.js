@@ -4,7 +4,7 @@ import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { UserDetailsContext } from "../layout";
 import { db } from "@/lib/firebase";
-import { doc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import Image from "next/image";
 import Email from "../../../public/images/icon-email.svg";
 import Password from "../../../public/images/icon-password.svg";
