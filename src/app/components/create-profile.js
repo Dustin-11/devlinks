@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { db } from "@/lib/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth } from "@/lib/firebase";
 
 export default function CreateProfile () { 
     const [email, setEmail] = useState("");

@@ -2,32 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'InstrumentSans-Regular', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#scroll-Container::-webkit-scrollbar {
+  display: none;
 }
+
+.customImage {
+  fill: currentColor;
+  color: white;
+}
+
+.github{
+  background-color: #1A1A1A;
+}
+.frontend-mentor {
+  background-color: #FFFFFF;
+  color: black;
+}
+.twitter {
+  background-color: #43B7E9;
+}
+.linkedin {
+  background-color: #2D68FF;
+}
+.youtube {
+  background-color: #EE3939;
+}
+.facebook {
+  background-color: #2442AC;
+}
+.twitch {
+  background-color: #EE3FC8;
+}
+.dev {
+  background-color: #333333;
+}
+.codewars {
+  background-color: #8A1A50;
+}
+.codepen {
+  background-color: #AC8E24;
+}
+.freecc {
+  background-color: #302267;
+}
+.gitlab {
+  background-color: #EB4925;
+}
+.hash {
+  background-color: #0330D1;
+}
+.stack {
+  background-color: #EC7100;
+}
+
+/* @font-face {
+  font-family: "InstrumentSans-Bold";
+  src: url(../../public/fonts/static/InstrumentSans-Bold.ttf) format("truetype");
+  font-family: "InstrumentSans-Regular";
+  src: url(../../public/fonts/static/InstrumentSans-Regular.ttf) format("truetype");
+  font-family: "InstrumentSans-SemiBold";
+  src: url(../../public/fonts/static/InstrumentSans-SemiBold.ttf) format("truetype");
+} */
