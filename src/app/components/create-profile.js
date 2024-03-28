@@ -4,6 +4,9 @@ import { db } from "@/lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth } from "@/lib/firebase";
+import Password from "../../../public/images/icon-password.svg";
+import Email from "../../../public/images/icon-email.svg";
+import Image from "next/image";
 
 export default function CreateProfile ({ setDisplay }) { 
     const [email, setEmail] = useState("");
@@ -65,6 +68,9 @@ return(
                 placeholder="e.g. alex@email.com"
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"></input>
                 <div className="absolute left-3.5 top-[37px]">
+                    <Image
+                        src={Email}
+                        alt="Email Icon" />
                 </div>
             </div>
             <div className="flex flex-col relative mt-5">
@@ -79,6 +85,9 @@ return(
                 placeholder="At least 8 characters"
                 pattern=".{8,}"></input>
                 <div className="absolute left-3.5 top-[37px]">
+                    <Image 
+                        src={Password}
+                        alt="Password Icon"/>
                 </div>
             </div>
             <div className="flex flex-col relative mt-5">
@@ -91,6 +100,9 @@ return(
                 placeholder="At least 8 characters"
                 ></input>
                 <div className="absolute left-3.5 top-[37px]">
+                    <Image 
+                        src={Password}
+                        alt="Password Icon"/>
                 </div>
             </div>
             <p className="text-xs text-customGrey my-6">Password must contain at least 8 characters</p>

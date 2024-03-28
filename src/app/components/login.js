@@ -1,5 +1,8 @@
 import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Email from "../../../public/images/icon-email.svg";
+import Password from "../../../public/images/icon-password.svg";
 
 export default function Login() {
     const [emailAddress, setEmailAddress] = useState('');
@@ -18,6 +21,9 @@ return(
                 type="email"
                 placeholder="e.g. alex@email.com"></input>
                 <div className="absolute left-3.5 top-[37px]">
+                    <Image
+                    src={Email}
+                    alt="Email Icon" />
                 </div>
             </div>
             <div className="flex flex-col relative mt-5">
@@ -26,6 +32,9 @@ return(
                 type="password"
                 placeholder="Enter your password"></input>
                 <div className="absolute left-3.5 top-[37px]">
+                <Image
+                        src={Password}
+                        alt="Password Icon"/>
                 </div>
             </div>
             <button className="w-full border-1 border-red block mx-auto py-2 bg-customPurple active:bg-customPurpleActive
