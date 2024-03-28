@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth } from "@/lib/firebase";
 
-export default function CreateProfile () { 
+export default function CreateProfile ({ setDisplay }) { 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -40,7 +40,7 @@ export default function CreateProfile () {
             //     uid: userId
             // })
             console.log('User signed up: ', userCredential.user);
-            router.push('/')
+            setDisplay(0);
         }
         catch (error) {
             console.error("Error in createNewAccount", error);

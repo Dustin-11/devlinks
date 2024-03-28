@@ -1,4 +1,11 @@
+import { useState, useContext, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Login() {
+    const [emailAddress, setEmailAddress] = useState('');
+    const [passwordText, setPasswordText] = useState('');
+    // const { userDetails, setUserDetails } = useContext(UserDetailsContext);
+
 return(
     <>
     <div className="w-full mt-10 md:bg-white md:py-10 md:px-10 md:rounded md:max-w-[75%] lg:max-w-[50%] xl:max-w-[40%]">
