@@ -91,7 +91,6 @@ export default function LinkButton ({themeSetter, linkAddress}) {
             <li className={`${theme} mt-4 text-customWhite py-3 rounded-lg border-1 border-customBorders flex gap-2 pl-4 justify-between`}
                 onClick={openLink}>
                 <div className='flex gap-3 items-center'>
-                    {/* {<Facebook fill={'#000000'}/>} */}
                     {PlatformComponent && <PlatformComponent fill={fillColor} />}
                 <span>{themeSetter}</span>
                 </div>
