@@ -77,7 +77,7 @@ export default function PhoneIllustration() {
                 console.error('Error loading image:', error);
             }
         }
-        if (userDetails.length > 0) {
+        if (userDetails.photo.length > 0) {
         fetchImage();
         }
     }, [userDetails.photo])

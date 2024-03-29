@@ -1,10 +1,8 @@
 'use client';
 
-// import AddLink from "@/app/components/add-link";
-// import ProfileHeader from "@/app/components/profile-header";
-// import PhoneIllustration from "../components/phone-illustration";
 import MainHeader from "../components/common/main-header";
 import PhoneIllustration from "../components/common/phone-illustration";
+import AddLink from "../components/links/add-link";
 
 export default function account () {
     return(
@@ -19,7 +17,7 @@ export default function account () {
                     <main className="bg-customWhite h-[calc(100vh-110px)] w-11/12 fixed bottom-4 
                                      left-1/2 transform -translate-x-1/2 rounded-lg
                                      overflow-hidden xl:w-full xl:absolute xl:h-full xl:bottom-0">
-                        {/* <AddLink></AddLink> */}
+                        <AddLink></AddLink>
                     </main>
                 </div>
             </div>
