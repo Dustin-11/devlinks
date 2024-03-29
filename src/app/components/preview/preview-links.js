@@ -11,7 +11,7 @@ export default function PreviewLinks() {
         console.log(userDetails.links);
     }, [])
     return(
-        <ul className="px-12 pt-8 md:pt-3">
+        <ul className="px-12 pt-8 md:pt-3 md:px-0">
             {userDetails.links && (userDetails.links.map((card) => (<LinkButton key={card.indexNumber} linkAddress={card.link} themeSetter={card.name}></LinkButton>)))}
         </ul>
     );

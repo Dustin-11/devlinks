@@ -78,21 +78,24 @@ export default function LinkButton ({themeSetter, linkAddress}) {
     }
 
         //  SVG for arrow icon
-        // function Arrow({ x, y, fill }) {
-        //     return(
-        //             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EEE" x={x} y={y} viewBox="0 0 16 16">
-        //                     <path fill={fill} d="M2.667 7.333v1.334h8L7 12.333l.947.947L13.227 8l-5.28-5.28L7 3.667l3.667 3.666h-8Z"/>
-        //             </svg> 
-        //         );
-        // }
+        function Arrow({ x, y, fill }) {
+            return(
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EEE" x={x} y={y} viewBox="0 0 16 16">
+                            <path fill={fill} d="M2.667 7.333v1.334h8L7 12.333l.947.947L13.227 8l-5.28-5.28L7 3.667l3.667 3.666h-8Z"/>
+                    </svg> 
+                );
+        }
 
     return(
   
             <li className={`${theme} mt-4 text-customWhite py-3 rounded-lg border-1 border-customBorders flex gap-2 pl-4 justify-between`}
                 onClick={openLink}>
-                <div className='flex gap-3 items-center'>
+                <div className='flex gap-3 justify-between items-center w-full pr-3'>
+                    <div className="flex items-center gap-4">
                     {PlatformComponent && <PlatformComponent fill={fillColor} />}
-                <span>{themeSetter}</span>
+                    <span>{themeSetter}</span>
+                    </div>
+                    <Arrow fill={fillColor}/>
                 </div>
             </li>
     )
