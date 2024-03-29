@@ -53,7 +53,7 @@ export default function AddLink() {
 
     //  Allows user to delete single LinkCard based on it's id property
     const deleteFunction = (num) => {
-        console.log(num);
+        console.log('Card ID: ', num);
         if(Array.isArray(listOfLinks)) {
             setListOfLinks(prevLinks => {
                 let newArray = prevLinks.filter(link => link.id !== num);
