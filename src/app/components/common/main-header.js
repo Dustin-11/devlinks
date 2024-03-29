@@ -10,15 +10,13 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import Link from "next/link";
 import { UserDetailsContext } from "@/app/layout";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 
 export default function MainHeader() {
     const { userDetails, setUserDetails } = useContext(UserDetailsContext);
     const [linksActive, setLinksActive] = useState(true);
     const [detailsActive, setDetailsActive] = useState(false);
-    // const linksRef = useRef(true);
-    // const detailsRef = useRef(false);
     const router = useRouter();
     const signingOut = () => {
         signOut(auth)
@@ -43,11 +41,11 @@ export default function MainHeader() {
         router.push(x);
     }
 
-    const handleClick1 = () => {
+    const linksPageClick = () => {
         localStorage.setItem('focus', 'links'); 
     }
 
-    const handleClick2 = () => {
+    const detailsPageClick = () => {
         localStorage.setItem('focus', 'user-details');
     }
 
@@ -74,11 +72,11 @@ export default function MainHeader() {
             </Image>
             
             <div className="flex gap-2">
-                <a onClick={() => {handleClick1(); navigate('/links')}} className={`flex align-center px-6 py-2 rounded-lg 
+                <a onClick={() => {linksPageClick(); navigate('/links')}} className={`flex align-center px-6 py-2 rounded-lg 
                                                     ${linksActive ? 'bg-customLightPurple' : ''} `}>
                     <LinkIcon colorFlag={linksActive}/>
                 </a>
-                <a onClick={() => {handleClick2(); navigate('/user-details')}} className={`flex align-center px-6 py-2 rounded-lg focus:bg-customLightPurple focus:outline-none
+                <a onClick={() => {detailsPageClick(); navigate('/user-details')}} className={`flex align-center px-6 py-2 rounded-lg focus:bg-customLightPurple focus:outline-none
                                                                                                                        ${detailsActive ? 'bg-customLightPurple' : ''}`}>
                     <ProfileIcon colorFlag={detailsActive} />
                 </a>
