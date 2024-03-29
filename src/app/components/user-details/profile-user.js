@@ -142,7 +142,7 @@ export default function ProfileUser({ nameRequirements, isInitialNames, emailNot
                 <div className="md:flex md:justify-between md:items-center ">
                     <label className="block my-1 mt-5 block text-xs">Email</label>
                     <div className="md:w-3/5">
-                        <input type="email" placeholder='e.g. johndoe@gmail.com' value={email} 
+                        <input type="email" placeholder='e.g. johndoe@gmail.com' readOnly value={email} 
                                onChange={(e) => setEmail(e.target.value)}  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                                className="block w-full py-2 pl-2 rounded-lg border-customBorders border-1 text-customDarkGrey md:mr-4"></input>
                     </div>

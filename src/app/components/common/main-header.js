@@ -42,7 +42,7 @@ export default function MainHeader() {
     }
 
     const linksPageClick = () => {
-        localStorage.setItem('focus', 'links'); 
+        localStorage.setItem('focus', 'links');
     }
 
     const detailsPageClick = () => {
@@ -59,7 +59,10 @@ export default function MainHeader() {
                 setLinksActive(false);
                 setDetailsActive(true);
             }
-    }
+        }
+        else {
+            localStorage.setItem('focus', 'links');
+        }
     }, [])
 
     return (

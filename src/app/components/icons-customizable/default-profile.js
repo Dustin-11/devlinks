@@ -25,5 +25,3 @@ export default function DefaultProfileIcon() {
 </svg>
 )
 }
-
-// clip-path="url(#clip0_15_82)"
