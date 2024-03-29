@@ -15,10 +15,10 @@ import { useContext, useEffect, useRef, useState } from "react";
 
 export default function MainHeader() {
     const { userDetails, setUserDetails } = useContext(UserDetailsContext);
-    const [accountActive, setAccountActive] = useState(false);
-    const [profileActive, setProfileActive] = useState(false);
-    const accountRef = useRef(null);
-    const profileRef = useRef(null);
+    const [linksActive, setLinksActive] = useState(true);
+    const [detailsActive, setDetailsActive] = useState(false);
+    // const linksRef = useRef(true);
+    // const detailsRef = useRef(false);
     const router = useRouter();
     const signingOut = () => {
         signOut(auth)
@@ -55,11 +55,11 @@ export default function MainHeader() {
         if(localStorage.getItem('focus') !== null) {
             const focusValue = localStorage.getItem('focus');
             if(focusValue === 'links') {
-                setAccountActive(true);
-                setProfileActive(false);
+                setLinksActive(true);
+                setDetailsActive(false);
             } else if (focusValue === 'user-details') {
-                setAccountActive(false);
-                setProfileActive(true);
+                setLinksActive(false);
+                setDetailsActive(true);
             }
     }
     }, [])
@@ -74,13 +74,13 @@ export default function MainHeader() {
             </Image>
             
             <div className="flex gap-2">
-                <a ref={accountRef} onClick={() => {handleClick1(); navigate('/links')}} className={`flex align-center px-6 py-2 rounded-lg 
-                                                    ${accountActive ? 'bg-customLightPurple' : ''} `}>
-                    <LinkIcon colorFlag={accountActive}/>
+                <a onClick={() => {handleClick1(); navigate('/links')}} className={`flex align-center px-6 py-2 rounded-lg 
+                                                    ${linksActive ? 'bg-customLightPurple' : ''} `}>
+                    <LinkIcon colorFlag={linksActive}/>
                 </a>
-                <a ref={profileRef} onClick={() => {handleClick2(); navigate('/user-details')}} className={`flex align-center px-6 py-2 rounded-lg focus:bg-customLightPurple focus:outline-none
-                                                                                                                       ${profileActive ? 'bg-customLightPurple' : ''}`}>
-                    <ProfileIcon colorFlag={profileActive} />
+                <a onClick={() => {handleClick2(); navigate('/user-details')}} className={`flex align-center px-6 py-2 rounded-lg focus:bg-customLightPurple focus:outline-none
+                                                                                                                       ${detailsActive ? 'bg-customLightPurple' : ''}`}>
+                    <ProfileIcon colorFlag={detailsActive} />
                 </a>
             </div>
             <Link href="/preview" className="flex align-center px-3 py-2 rounded-lg focus:bg-customLightPurple border-1 border-customPurple">
