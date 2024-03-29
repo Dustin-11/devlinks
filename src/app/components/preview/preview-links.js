@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import { UserDetailsContext } from "@/app/layout";
 import { useContext, useEffect } from "react";
 import LinkButton from "./preview-link-button";

@@ -1,9 +1,11 @@
 
-import PreviewHeader from "../components/preview/preview-header"
-import PreviewUser from "../components/preview/preview-user"
-import PreviewLinks from "../components/preview/preview-links"
+import PreviewHeader from "../components/preview/preview-header";
+import PreviewUser from "../components/preview/preview-user";
+import PreviewLinks from "../components/preview/preview-links";
+
 
 export default function Preview() {
+
     return(
         <div className="bg-customWhite h-screen w-screen md:bg-customLightGrey">
             <div className="md:border-2 md:bg-customPurple md:fixed md:w-full md:h-2/5 md:z-10 md:rounded-b-[36px]"></div>
