@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 // components
-import SharedHeader from "./components/shared-header";
-import CreateProfile from "./components/create-profile";
-import Login from "./components/login";
+import AuthHeader from "./components/auth/auth-header";
+import CreateProfile from "./components/auth/create-profile";
+import Login from "./components/auth/login";
 
 export default function Signin() {
   const [page, setPage] = useState(0)
@@ -18,7 +18,7 @@ export default function Signin() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-6 font-customRegular md:justify-center md:bg-customLightGrey">
-    <SharedHeader />
+    <AuthHeader />
     {page === 0 ? <Login /> : <CreateProfile setDisplay={(x) => setPage(x)} />}
     <div className="flex flex-col items-center mt-5">
       <p className="text-customGrey">

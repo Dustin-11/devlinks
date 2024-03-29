@@ -4,8 +4,8 @@ import { db } from "@/lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth } from "@/lib/firebase";
-import Password from "../../../public/images/icon-password.svg";
-import Email from "../../../public/images/icon-email.svg";
+import Password from "../../../../public/images/icon-password.svg";
+import Email from "../../../../public/images/icon-email.svg";
 import Image from "next/image";
 
 export default function CreateProfile ({ setDisplay }) { 
