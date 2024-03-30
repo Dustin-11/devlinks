@@ -7,10 +7,10 @@ import { UserDetailsContext } from "@/app/layout";
 export default function PreviewHeader() {
     const [navigation, setNavigation] = useState();
     const { userDetails } = useContext(UserDetailsContext);
-    
+
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(`http://localhost:3000/preview/${userDetails.uid}`)
+        navigator.clipboard.writeText(`http://devlinks-mu.vercel.app/${userDetails.uid}`)
         .then(() => {
             console.log('Link copied to clipboard!');
         })
