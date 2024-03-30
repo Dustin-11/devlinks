@@ -1,5 +1,6 @@
 'use client';
 
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { createContext, useEffect, useState } from "react";
@@ -41,6 +42,12 @@ export default function RootLayout({ children }) {
   }, [userDetails]);
 
   return (
+    <>
+    <Head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Link sharing app for tech professionals" />
+    </Head>
     <html lang="en">
       <body className={inter.className}>
         <UserDetailsContext.Provider value={{userDetails, setUserDetails}}>
@@ -48,5 +55,6 @@ export default function RootLayout({ children }) {
         </UserDetailsContext.Provider>
       </body>
     </html>
+    </>
   );
 }
