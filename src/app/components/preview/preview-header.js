@@ -10,7 +10,8 @@ export default function PreviewHeader() {
 
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(`http://devlinks-mu.vercel.app/${userDetails.uid}`)
+        const currentUrl = window.location.href
+        navigator.clipboard.writeText(`${currentUrl}/${userDetails.uid}`)
         .then(() => {
             console.log('Link copied to clipboard!');
         })
