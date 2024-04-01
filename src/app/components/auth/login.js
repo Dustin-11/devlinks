@@ -12,6 +12,8 @@ import Password from "../../../../public/images/icon-password.svg";
 export default function Login() {
     const [emailAddress, setEmailAddress] = useState('');
     const [passwordText, setPasswordText] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const { userDetails, setUserDetails } = useContext(UserDetailsContext);
     const router = useRouter();
 
@@ -42,9 +44,29 @@ export default function Login() {
         }
     }, [userDetails.uid]);
 
+    const validateEmail = (email) => {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+    }
+
+    const validatePassword = (password) => {
+        return password.length >= 8;
+    }
+
     const loginAccount = (e) => {
         e.preventDefault()
-        console.log(auth);
+        if(!validateEmail(emailAddress)) {
+            setEmailError('Invalid email address');
+            return;
+        } else if(validateEmail(emailAddress)) {
+            setEmailError('');
+        }
+        if(!validatePassword(passwordText)) {
+            setPasswordError('Password must be at least 8 characters long');
+            return;
+        } else if(validatePassword(passwordText)) {
+            setPasswordError('');
+        }
         signInWithEmailAndPassword(auth, emailAddress, passwordText)
         //  Takes the saved user credentials in Firestore and sets them as global variable UserDetails
         .then((userCredentials) => {
@@ -65,13 +87,13 @@ export default function Login() {
             let errorMessage = '';
             switch (error.code) {
                 case 'auth/user-not-found':
-                    errorMessage = 'An account with this email does not exist. Please create a new account.'
+                    setPasswordError('An account with this email does not exist. Please create a new account.');
                     break;
                 case 'auth/invalid-credential':
-                    errorMessage = 'Invalid email/password. Please check sign-in information and try again.'
+                    setPasswordError('Invalid email/password. Please check sign-in information and try again.');
                     break;
                 default :
-                errorMessage = 'An error has occurred. Please try again later.'
+                setPasswordError('An error has occurred. Please try again later.');
             }
             console.error('Error while loggin in:', errorMessage);
         })
@@ -95,7 +117,10 @@ return(
                     src={Email}
                     alt="Email Icon" />
                 </div>
+                
+                
             </div>
+            {emailError && <span className="fixed h-6 text-sm text-red-500">{emailError}</span>}
             <div className="flex flex-col relative mt-5">
                 <label className="text-xs my-1">Password</label>
                 <input className="border-1 border-customBorders text-customGrey pl-10 pr-2 py-2 rounded-lg"
@@ -109,6 +134,7 @@ return(
                         alt="Password Icon"/>
                 </div>
             </div>
+            {passwordError && <span className="fixed h-6 text-sm text-red-500">{passwordError}</span>}
             <button className="w-full border-1 border-red block mx-auto py-2 bg-customPurple active:bg-customPurpleActive
             active:shadow active:shadow-customLightPurple hover:customLightPurple text-white mt-6 rounded-lg"
             type="submit"
