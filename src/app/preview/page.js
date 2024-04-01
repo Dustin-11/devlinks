@@ -13,7 +13,7 @@ export default function Preview() {
                 <main id="scroll-Container" className="bg-customWhite h-[calc(100vh-110px)] w-11/12 fixed bottom-4 
                 left-1/2 transform -translate-x-1/2 rounded-lg
                 overflow-y-scroll md:bg-customWhite md:z-50 md:h-[535px] md:w-2/5 md:shadow-md md:top-1/4 
-                md:flex md:justify-center md:rounded-3xl lg:w-1/3 xl:w-1/4">
+                flex justify-center md:rounded-3xl lg:w-1/3 xl:w-1/4">
                     <div className="w-8/12 md:absolute md:z-50 md:pb-4">
                         <PreviewUser></PreviewUser>
                         <PreviewLinks></PreviewLinks>

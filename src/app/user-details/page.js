@@ -92,7 +92,7 @@ export default function Profile () {
                     <div className="absolute bottom-0 w-full pb-5 bg-customWhite xl:w-full xl:mt-4">
                         <div className="border-b border-customBorders"></div>
                         <div className="px-5 xl:flex xl:justify-end xl:mr-5">
-                            <button className="mt-5 bg-customPurple text-customWhite w-full font-bold py-2 rounded-lg 
+                            <button className="mt-5 bg-customPurple text-customWhite w-full font-bold py-2 rounded-lg hover:cursor-pointer
                             disabled:bg-customLightPurple xl:w-16"
                                     disabled={disabled} onClick={profileUserFlag}>Save</button>
                         </div>

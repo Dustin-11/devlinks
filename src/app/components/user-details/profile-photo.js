@@ -104,7 +104,7 @@ export default function ProfilePhoto({ setDidPhotoChange, trigger }) {
         <div className="bg-customLightGrey my-4 mx-5 p-5 text-left rounded-lg flex flex-col md:flex-row md:py-0 md:justify-between">
             <p className="block ">Profile Picture</p>
             <div className="md:w-3/5 md:flex md:gap-4">
-                <div className={` relative my-5 py-16 bg-customLightPurple rounded-xl text-center font-bold w-3/5 max-w-56 ${picture ? 'text-customWhite' : 'text-customPurple'}`} style={{backgroundImage: picture ? `url(${picture})` : 'none', backgroundSize: 'cover', backgroundPosition: 'center'}}
+                <div className={` relative my-5 py-16 bg-customLightPurple rounded-xl text-center font-bold hover:cursor-pointer w-3/5 max-w-56 ${picture ? 'text-customWhite' : 'text-customPurple'}`} style={{backgroundImage: picture ? `url(${picture})` : 'none', backgroundSize: 'cover', backgroundPosition: 'center'}}
                      onClick={handleDivClick}>
                           {picture && (<div className="absolute inset-0 bg-black bg-opacity-40"></div>)}
                     <div className="relative">

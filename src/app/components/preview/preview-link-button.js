@@ -88,7 +88,7 @@ export default function LinkButton ({themeSetter, linkAddress}) {
 
     return(
   
-            <li className={`${theme} mt-4 text-customWhite py-3 rounded-lg border-1 border-customBorders flex gap-2 pl-4 justify-between`}
+            <li className={`${theme} mt-4 text-customWhite py-3 rounded-lg border-1 border-customBorders flex gap-2 pl-4 justify-between hover:cursor-pointer`}
                 onClick={openLink}>
                 <div className='flex gap-3 justify-between items-center w-full pr-3'>
                     <div className="flex items-center gap-4">

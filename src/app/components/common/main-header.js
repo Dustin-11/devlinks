@@ -67,28 +67,35 @@ export default function MainHeader() {
 
     return (
         <nav className="bg-customWhite flex justify-between align-center w-full px-6 py-4 fixed top-0">
+            <div className="md:flex md:gap-2 md:items-center">
             <Image
                 src={DevlinksIcon}
                 alt="Devlinks Icon"
-                className=""
+                className="hover:cursor-pointer"
                 onClick={signingOut}>
             </Image>
+            <span className="hidden md:block text-2xl font-bold">devlinks</span>
+            </div>
             
             <div className="flex gap-2">
-                <a onClick={() => {linksPageClick(); navigate('/links')}} className={`flex align-center px-6 py-2 rounded-lg 
+                <a onClick={() => {linksPageClick(); navigate('/links')}} className={`flex items-center px-6 py-2 rounded-lg hover:cursor-pointer
                                                     ${linksActive ? 'bg-customLightPurple' : ''} `}>
                     <LinkIcon colorFlag={linksActive}/>
+                    <span className={`hidden ml-2 md:block ${linksActive ? 'text-customPurple font-bold' : ''}`}>Links</span>
                 </a>
-                <a onClick={() => {detailsPageClick(); navigate('/user-details')}} className={`flex align-center px-6 py-2 rounded-lg focus:bg-customLightPurple focus:outline-none
+                <a onClick={() => {detailsPageClick(); navigate('/user-details')}} className={`flex items-center px-6 py-2 hover:cursor-pointer rounded-lg focus:bg-customLightPurple focus:outline-none
                                                                                                                        ${detailsActive ? 'bg-customLightPurple' : ''}`}>
                     <ProfileIcon colorFlag={detailsActive} />
+                    <span className={`hidden ml-2 md:block ${detailsActive ? 'text-customPurple font-bold' : ''}`}>Profile Details</span>
                 </a>
             </div>
-            <Link href="/preview" className="flex align-center px-3 py-2 rounded-lg focus:bg-customLightPurple border-1 border-customPurple">
+            <Link href="/preview" className="flex items-center px-3 py-2 rounded-lg hover:cursor-pointer focus:bg-customLightPurple border-1 border-customPurple md:px-6">
                 <Image
                     src={PreviewIcon}
-                    alt="Profile Preview Icon">
+                    alt="Profile Preview Icon"
+                    className="md:hidden">
                 </Image>
+                <span className="hidden md:block text-customPurple font-bold text-sm">Preview</span>
             </Link>
         </nav>
     );

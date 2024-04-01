@@ -10,8 +10,13 @@ export default function LinkCard({index, item, onDragOver, moveLinkCard, selecte
     const [option, setOption] = useState('');
     const [url, setUrl] = useState('');
     const [cardDetails, setCardDetails] = useState({name: '', link: '', indexNumber: index, id: item.id});
+    const [isUrlValid, setIsUrlValid] = useState(true);
 
 
+    // useEffect(() => {
+    //     const pattern = /^(ftp|http|https):\/\/[^ "]+\.[^ "]+$/;
+    //     setIsUrlValid(pattern.test(url));
+    // }, [url])
 
     const handleDragStart = () => {
         moveLinkCard(index);
@@ -62,7 +67,7 @@ export default function LinkCard({index, item, onDragOver, moveLinkCard, selecte
                 <input type="text" placeholder="e.g. https://www.github.com/"
                        onChange={(e) => setUrl(e.target.value)}
                        value={url}
-                       className="block w-full py-2 pl-2 rounded-lg border-customBorders border-1"></input>
+                       className={`block w-full py-2 pl-2 rounded-lg border-customBorders border-1 outline-none ${isUrlValid ? "" : "border-red-500"}`}></input>
             </div>
         </div>
 );
