@@ -20,7 +20,7 @@ export default function Signin() {
     <main className="flex min-h-screen flex-col items-center p-6 font-customRegular md:justify-center md:bg-customLightGrey">
     <AuthHeader />
     {page === 0 ? <Login /> : <CreateProfile setDisplay={(x) => setPage(x)} />}
-    <div className="flex flex-col items-center mt-5">
+    <div className="flex flex-col items-center mt-5 md:flex-row md:gap-4">
       <p className="text-customGrey">
         {page === 0 ? "Don't have an account?" : "Already have an account?"}
       </p>

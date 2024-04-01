@@ -86,7 +86,7 @@ export default function CreateProfile ({ setDisplay }) {
                 default :
                 setPasswordError('An error has occurred. Please try again later.');
             }
-            console.error('Error while loggin in:', errorMessage);
+            console.error('Error while logging in:', errorMessage);
         }
     }
 
@@ -100,7 +100,7 @@ return(
                 <label className="text-xs my-1">Email Address</label>
                 <input 
                 className="border-1 border-customBorders focus:outline-none focus:border-customPurple 
-                active:border-customPurple text-customGrey pl-10 py-2 rounded-lg
+                active:border-customPurple text-customGrey pl-10 py-2 rounded-lg focus:ring focus:ring-customLightPurple focus:ring-opacity-50 focus:shadow-lg focus:shadow-customLightPurple
                 invalid:border-customRed" 
                 type="email"
                 value={email}
@@ -118,7 +118,7 @@ return(
                 <label className="text-xs my-1">Create Password</label>
                 <input 
                 className="border-1 border-customBorders focus:outline-none focus:border-customPurple 
-                active:border-customPurple text-customGrey pl-10 pr-2 py-2 rounded-lg
+                active:border-customPurple text-customGrey pl-10 pr-2 py-2 rounded-lg focus:ring focus:ring-customLightPurple focus:ring-opacity-50 focus:shadow-lg focus:shadow-customLightPurple
                 invalid:border-customRed" 
                 type="password"
                 value={password}
@@ -135,7 +135,7 @@ return(
             <div className="flex flex-col relative mt-5">
                 <label className="text-xs my-1">Confirm Password</label>
                 <input className="border-1 border-customBorders focus:outline-none focus:border-customPurple 
-                active:border-customPurple text-customGrey pl-10 pr-2 py-2 rounded-lg" 
+                active:border-customPurple text-customGrey pl-10 pr-2 py-2 rounded-lg focus:ring focus:ring-customLightPurple focus:ring-opacity-50 focus:shadow-lg focus:shadow-customLightPurple" 
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -150,7 +150,7 @@ return(
             {passwordError && <span className="fixed h-6 text-sm text-red-500">{passwordError}</span>}
             {/* <p className="text-xs text-customGrey my-6">Password must contain at least 8 characters</p> */}
             <button className="w-full border-1 border-red block mx-auto mt-8 py-2 bg-customPurple active:bg-customPurpleActive
-            active:shadow-lg active:shadow-customLightPurple
+            active:shadow-lg active:shadow-customLightPurple hover:shadow hover:shadow-customLightPurple hover:opacity-40
             text-white rounded-lg" 
             type="submit"
             >Create new account</button>

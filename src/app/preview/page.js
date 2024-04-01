@@ -1,10 +1,22 @@
+'use client';
 
 import PreviewHeader from "../components/preview/preview-header";
 import PreviewUser from "../components/preview/preview-user";
 import PreviewLinks from "../components/preview/preview-links";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { auth } from "@/lib/firebase";
 
 
 export default function Preview() {
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!auth.currentUser){
+            router.push('/');
+        }
+        console.log(auth.currentUser);
+    }, [router])
 
     return(
         <div className="bg-customWhite h-screen w-screen md:bg-customLightGrey">

@@ -3,9 +3,22 @@
 import MainHeader from "../components/common/main-header";
 import PhoneIllustration from "../components/common/phone-illustration";
 import AddLink from "../components/links/add-link";
+import { useRouter } from "next/navigation";
+import { auth } from "@/lib/firebase";
+import { useEffect } from "react";
 
 export default function account () {
+const router = useRouter();
+
+    useEffect(() => {
+        if(!auth.currentUser){
+            router.push('/');
+        }
+        console.log(auth.currentUser);
+    }, [router])
+
     return(
+        
         <div className="bg-customLightGrey h-screen w-screen">
             <MainHeader></MainHeader>
             <div className="xl:flex xl:justify-between xl:pt-20 xl:h-full xl:gap-4">
@@ -22,5 +35,6 @@ export default function account () {
                 </div>
             </div>
         </div>
+        
     )
 }

@@ -70,7 +70,7 @@ export default function PlatformOptions({ handleOptionSelection, selection }) {
                  
                 {!displayOptions && (<span>{selectedOption}</span>)}
             </div>
-            <ul className='text-customDarkGrey z-5 bg-white'>
+            <ul className='text-customDarkGrey z-500 bg-white'>
                 {displayOptions && (platforms.map(platform => (
                     <li className="flex gap-4 hover:bg-customBorders py-2"
                         onClick={() => optionsClick(platform.name)}
