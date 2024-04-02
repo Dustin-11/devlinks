@@ -19,8 +19,10 @@ export default function MainHeader() {
     const [detailsActive, setDetailsActive] = useState(false);
     const router = useRouter();
     const signingOut = () => {
+        console.log(auth);
         signOut(auth)
         .then(() => {
+            console.log(auth);
             router.push('/');
             localStorage.clear();
             setUserDetails({

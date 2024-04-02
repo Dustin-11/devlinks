@@ -8,6 +8,7 @@ import ProfileUser from "../components/user-details/profile-user";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 import { redirect } from "next/navigation";
+import AuthRedirect from "../components/auth/auth-redirect";
 
 export default function Profile () {
     const [disabled, setDisabled] = useState(true);
@@ -18,11 +19,11 @@ export default function Profile () {
     const [nameRequirementsMet, setNameRequirementsMet] = useState(false);
     const [initialNamesReq, setInitialNamesReq] = useState(false);
     
-    useEffect(() => {
-        if(!auth.currentUser){
-            redirect('/');
-        }
-    }, [])
+    // useEffect(() => {
+    //     if(!auth.onAuthStateChanged){
+    //         redirect('/');
+    //     }
+    // }, [])
 
     //  Triggered on save button click
     //  Reads each child component property and affects as needed
@@ -79,6 +80,7 @@ export default function Profile () {
 
     return(
         <div className="bg-customLightGrey h-screen w-screen">
+            <AuthRedirect>
             <MainHeader />
             <div className="xl:flex xl:justify-between xl:pt-20 xl:h-full xl:gap-4">
                 <div className="invisible xl:visible xl:bg-white xl:w-2/5 xl:flex 
@@ -102,12 +104,13 @@ export default function Profile () {
                         <div className="border-b border-customBorders"></div>
                         <div className="px-5 xl:flex xl:justify-end xl:mr-5">
                             <button className="mt-5 bg-customPurple text-customWhite w-full font-bold py-2 rounded-lg hover:cursor-pointer
-                            disabled:bg-customLightPurple xl:w-16"
+                            disabled:bg-customLightPurple xl:w-16 hover:shadow hover:shadow-customLightPurple hover:opacity-40"
                                     disabled={disabled} onClick={profileUserFlag}>Save</button>
                         </div>
                     </div>
                 </div>
             </div>
+            </AuthRedirect>
         </div>
     );
 }

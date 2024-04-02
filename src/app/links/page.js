@@ -3,22 +3,13 @@
 import MainHeader from "../components/common/main-header";
 import PhoneIllustration from "../components/common/phone-illustration";
 import AddLink from "../components/links/add-link";
-import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase";
-import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
+import AuthRedirect from "../components/auth/auth-redirect";
 
 export default function Account () {
-
-    useEffect(() => {
-        if(!auth.currentUser){
-            redirect('/');
-        }
-    }, [])
-
     return(
         
         <div className="bg-customLightGrey h-screen w-screen">
+            <AuthRedirect>
             <MainHeader></MainHeader>
             <div className="xl:flex xl:justify-between xl:pt-20 xl:h-full xl:gap-4">
                 <div className="invisible xl:visible xl:bg-white xl:w-2/5 xl:flex 
@@ -33,6 +24,7 @@ export default function Account () {
                     </main>
                 </div>
             </div>
+            </AuthRedirect>
         </div>
         
     )

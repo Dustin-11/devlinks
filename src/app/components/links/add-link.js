@@ -240,7 +240,7 @@ export default function AddLink() {
             <div className="absolute bottom-0 w-full pb-5 bg-customWhite">
                 <div className="border-b border-customBorders"></div>
                 <div className="px-5">
-                    <button className="mt-5 bg-customPurple text-customWhite w-full font-bold py-2 rounded-lg hover:cursor-pointer disabled:bg-customLightPurple"
+                    <button className="mt-5 bg-customPurple text-customWhite w-full font-bold py-2 rounded-lg hover:cursor-pointer hover:shadow hover:shadow-customLightPurple hover:opacity-40 disabled:bg-customLightPurple"
                             disabled={disabled}
                             onClick={saveLinks}
                             >Save</button>
