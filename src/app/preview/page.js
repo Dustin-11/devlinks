@@ -35,7 +35,7 @@ export default function Preview() {
                     <PreviewLinks></PreviewLinks>
                 </div>
             </main>
-            {dialog && <div className="fixed flex gap-4 justify-center items-center bottom-16 left-1/2 transform -translate-x-1/2 bg-customDarkGrey px-4 py-2 rounded-lg">
+            {dialog && <div className="fixed z-100 flex gap-4 justify-center items-center bottom-6 left-1/2 transform -translate-x-1/2 bg-customDarkGrey px-4 py-2 rounded-lg">
                 <LinkIcon colorFlag={false}/>
                 <p className="text-customWhite">The link has been copied to your clipboard!</p>
             </div>}
