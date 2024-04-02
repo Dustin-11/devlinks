@@ -6,16 +6,15 @@ import AddLink from "../components/links/add-link";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 export default function account () {
-const router = useRouter();
-
+    
     useEffect(() => {
         if(!auth.currentUser){
-            router.push('/');
+            redirect('/');
         }
-        console.log(auth.currentUser);
-    }, [router])
+    }, [])
 
     return(
         

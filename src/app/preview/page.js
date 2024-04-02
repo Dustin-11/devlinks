@@ -6,17 +6,16 @@ import PreviewLinks from "../components/preview/preview-links";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { auth } from "@/lib/firebase";
+import { redirect } from "next/navigation";
 
 
 export default function Preview() {
-    const router = useRouter();
 
     useEffect(() => {
         if(!auth.currentUser){
-            router.push('/');
+            redirect('/');
         }
-        console.log(auth.currentUser);
-    }, [router])
+    }, [])
 
     return(
         <div className="bg-customWhite h-screen w-screen md:bg-customLightGrey">

@@ -7,6 +7,7 @@ import ProfilePhoto from "../components/user-details/profile-photo";
 import ProfileUser from "../components/user-details/profile-user";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
+import { redirect } from "next/navigation";
 
 export default function Profile () {
     const [disabled, setDisabled] = useState(true);
@@ -16,14 +17,12 @@ export default function Profile () {
     const [emailChanged, setEmailChanged] = useState(false);
     const [nameRequirementsMet, setNameRequirementsMet] = useState(false);
     const [initialNamesReq, setInitialNamesReq] = useState(false);
-    const router = useRouter();
-
+    
     useEffect(() => {
         if(!auth.currentUser){
-            router.push('/');
+            redirect('/');
         }
-        console.log(auth.currentUser);
-    }, [router])
+    }, [])
 
     //  Triggered on save button click
     //  Reads each child component property and affects as needed
