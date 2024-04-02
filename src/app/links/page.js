@@ -5,11 +5,11 @@ import PhoneIllustration from "../components/common/phone-illustration";
 import AddLink from "../components/links/add-link";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 
-export default function account () {
-    
+export default function Account () {
+
     useEffect(() => {
         if(!auth.currentUser){
             redirect('/');
