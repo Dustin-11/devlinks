@@ -44,7 +44,6 @@ export default function Shareable({ params }) {
     return(
         <div className="h-screen w-screen bg-customLightGrey">
             <div className="border-2 bg-customPurple fixed w-full h-2/5 z-10 rounded-b-[36px]"></div>
-                {/* <PreviewHeader></PreviewHeader> */}
                 <main id="scroll-Container" className="bg-customWhite h-[calc(100vh-110px)] w-8/12 fixed bottom-8 
                 left-1/2 transform -translate-x-1/2 rounded-lg
                 overflow-y-scroll md:bg-customWhite z-50 h-[800px] md:h-[535px] md:w-2/5 shadow-md md:top-1/4 

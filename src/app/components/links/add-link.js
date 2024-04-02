@@ -15,6 +15,7 @@ export default function AddLink() {
     // List of link-card objects -- allows for deleting and resorting
     const [listOfLinks, setListOfLinks] = useState([]);
     const [scrollPosition, setScrollPosition] = useState(0);
+    
     // Handles if the instruction or link-card is displayed
     const [displayLinks, setDisplayLinks] = useState(false);
     const [disabled, setDisabled] = useState(true);

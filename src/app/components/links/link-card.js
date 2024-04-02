@@ -10,7 +10,7 @@ export default function LinkCard({index, item, onDragOver, moveLinkCard, selecte
     const [option, setOption] = useState('');
     const [url, setUrl] = useState('');
     const [cardDetails, setCardDetails] = useState({name: '', link: '', indexNumber: index, id: item.id});
-    const [isUrlValid, setIsUrlValid] = useState(true);
+    const [isUrlValid, setIsUrlValid] = useState(true); 
 
 
     // useEffect(() => {
@@ -27,7 +27,6 @@ export default function LinkCard({index, item, onDragOver, moveLinkCard, selecte
     }
 
     //  Keeps specific LinkCard details up to date locally based on user changes
-
     useEffect(() => {
         setCardDetails(prevState => ({
             ...prevState,

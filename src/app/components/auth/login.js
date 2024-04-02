@@ -68,6 +68,7 @@ export default function Login() {
             setPasswordError('');
         }
         signInWithEmailAndPassword(auth, emailAddress, passwordText)
+        
         //  Takes the saved user credentials in Firestore and sets them as global variable UserDetails
         .then((userCredentials) => {
             const user = userCredentials.user;

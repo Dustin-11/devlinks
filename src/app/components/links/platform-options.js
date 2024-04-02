@@ -63,14 +63,13 @@ export default function PlatformOptions({ handleOptionSelection, selection }) {
 
     return(
         <>
-        <div className="bg-customWhite absolute w-full py-2 rounded-lg border-customBorders border-1 hover:cursor-pointer"
-                >
+        <div className={`bg-customWhite absolute w-full py-2 rounded-lg border-customBorders border-1 ${displayOptions ? 'fixed h-[140px] overflow-y-scroll' : ''} hover:cursor-pointer`}>
             <div className='text-left pl-2'
                  onClick={optionsClick}>
                  
                 {!displayOptions && (<span>{selectedOption}</span>)}
             </div>
-            <ul className='text-customDarkGrey z-500 bg-white'>
+            <ul className={`text-customDarkGrey absolute w-full`}>
                 {displayOptions && (platforms.map(platform => (
                     <li className="flex gap-4 hover:bg-customBorders py-2"
                         onClick={() => optionsClick(platform.name)}

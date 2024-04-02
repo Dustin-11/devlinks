@@ -4,19 +4,11 @@ import PreviewHeader from "../components/preview/preview-header";
 import PreviewUser from "../components/preview/preview-user";
 import PreviewLinks from "../components/preview/preview-links";
 import { useEffect, useState } from "react";
-import { auth } from "@/lib/firebase";
-import { redirect } from "next/navigation";
 import LinkIcon from "../components/icons-customizable/link-icon";
 import AuthRedirect from "../components/auth/auth-redirect";
 
 export default function Preview() {
     const [dialog, setDialog] = useState(false);
-
-    // useEffect(() => {
-    //     if(!auth.onAuthStateChanged){
-    //         redirect('/');
-    //     }
-    // }, [])
 
     useEffect(() => {
         if(dialog) {

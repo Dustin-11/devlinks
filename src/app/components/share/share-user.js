@@ -26,14 +26,6 @@ export default function ShareUser() {
         }
     }, [profile.photo])
 
-    // useEffect(() => {
-    //     console.log(photo);
-    // }, [photo])
-
-    // useEffect(() => {
-    //     fetchImage(profile.photo);
-    // }, [profile])
-
     return(
         <div className="text-center">
          

@@ -14,9 +14,6 @@ export default function CreateProfile ({ setDisplay }) {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordError, setPasswordError] = useState('');
     const [emailError, setEmailError] = useState('');
-    const router = useRouter();
-    // const { userDetails, setUserDetails } = useContext(UserDetailsContext);
-
 
     const validateEmail = (x) => {
         const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,15 +29,6 @@ export default function CreateProfile ({ setDisplay }) {
             setPasswordError('');
         }
     }
-
-    // if (password.length < 8) {
-    //     setPasswordError('Password must be at least 8 characters long');
-    //     return;
-    // } else if (password !== confirmPassword) {
-    //     setPasswordError('Passwords do not match');
-    //     return;
-    // } else setPasswordError('');
-
 
     const createNewAccount = async (e) => {
         e.preventDefault();
@@ -59,18 +47,11 @@ export default function CreateProfile ({ setDisplay }) {
             const user = userCredential.user;
             const userId = user.uid;
             await setDoc(doc(db, 'users', userId), {
-                // firstName: '',
-                // lastName: '',
                 email: email,
                 password: password,
                 uid: userId
             });
 
-            // setUserDetails({
-            //     email: email,
-            //     password: password,
-            //     uid: userId
-            // })
             console.log('User signed up: ', userCredential.user);
             setDisplay(0);
         }
@@ -148,7 +129,6 @@ return(
                 </div>
             </div>
             {passwordError && <span className="fixed h-6 text-sm text-red-500">{passwordError}</span>}
-            {/* <p className="text-xs text-customGrey my-6">Password must contain at least 8 characters</p> */}
             <button className="w-full border-1 border-red block mx-auto mt-8 py-2 bg-customPurple active:bg-customPurpleActive
             active:shadow-lg active:shadow-customLightPurple hover:shadow hover:shadow-customLightPurple hover:opacity-40
             text-white rounded-lg" 

@@ -9,10 +9,6 @@ export default function PreviewUser() {
     const { userDetails } = useContext(UserDetailsContext);
     const [photo, setPhoto] = useState('');
 
-    // useEffect(() => {
-    //     fetchImage();
-    // }, [])
-
     const fetchImage = async() => {
         try {
             const response = await fetch(userDetails.photo);

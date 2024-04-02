@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import { ShareDetailsContext } from "@/app/preview/[uid]/page";
 import { useContext} from "react";
 import ShareLinkButton from "./share-link-button";
