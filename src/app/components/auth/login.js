@@ -119,10 +119,8 @@ return(
                     src={Email}
                     alt="Email Icon" />
                 </div>
-                
-                
             </div>
-            {emailError && <span className="fixed h-6 text-sm text-red-500">{emailError}</span>}
+            {emailError && <span className="h-6 absolute text-sm text-red-500">{emailError}</span>}
             <div className="flex flex-col relative mt-5">
                 <label className="text-xs my-1">Password</label>
                 <input className="border-1 border-customBorders text-customGrey pl-10 pr-2 py-2 rounded-lg focus:ring focus:ring-customLightPurple focus:ring-opacity-50 focus:shadow-lg focus:shadow-customLightPurple outline-none focus:border-customPurple"
@@ -136,9 +134,9 @@ return(
                         alt="Password Icon"/>
                 </div>
             </div>
-            {passwordError && <span className="fixed h-6 text-sm text-red-500">{passwordError}</span>}
+            {passwordError && <span className="h-6 absolute text-sm text-red-500">{passwordError}</span>}
             <button className="w-full border-1 border-red block mx-auto py-2 bg-customPurple active:bg-customPurpleActive
-            hover:shadow hover:shadow-customLightPurple hover:opacity-40 text-white mt-6 rounded-lg"
+            hover:shadow hover:shadow-customLightPurple hover:opacity-40 text-white mt-12 sm:mt-6 rounded-lg"
             type="submit"
             onClick={loginAccount}>Login</button>
         </form>
