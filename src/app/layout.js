@@ -28,8 +28,6 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const userInfo = localStorage.getItem('userDetails');
     if(userInfo) {
-      const parsed = JSON.parse(userInfo);
-      console.log(parsed);
       setUserDetails(JSON.parse(userInfo));
     }
   }, [])
@@ -38,7 +36,6 @@ export default function RootLayout({ children }) {
       if(userDetails.firstName.length > 0 && userDetails.lastName.length > 0) {
         localStorage.setItem('userDetails', JSON.stringify(userDetails));
       }
-      console.log(userDetails);
   }, [userDetails]);
 
   return (

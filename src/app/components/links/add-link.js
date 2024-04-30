@@ -91,7 +91,6 @@ export default function AddLink() {
         if(userDetails.links.length > 0) {
             setDisplayLinks(true);
             setListOfLinks(userDetails.links);
-            
         }
     }, [userDetails.links])
 
@@ -111,7 +110,6 @@ export default function AddLink() {
                 setDisabled(false);
             }
         })
-        console.log('ListOfLinks', listOfLinks);
     }, [listOfLinks]);
 
     //  Begins drag and drop logic

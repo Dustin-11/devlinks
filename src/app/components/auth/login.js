@@ -42,6 +42,7 @@ export default function Login() {
             }
             fetchData();
         }
+        console.log(auth.currentUser);
     }, [userDetails.uid]);
 
     const validateEmail = (email) => {

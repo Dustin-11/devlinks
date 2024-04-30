@@ -79,6 +79,8 @@ export default function ProfilePhoto({ setDidPhotoChange, trigger }) {
         console.log(file.name);
         const storage = getStorage();
         const storageRef = ref(storage, 'images/' + file.name);
+        console.log(storage);
+        console.log(storageRef);
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadTask.on('state_changed',
         (snapshot) => {
@@ -89,7 +91,7 @@ export default function ProfilePhoto({ setDidPhotoChange, trigger }) {
             console.log('Unsuccessful image upload. Please try again:', error);
         },
         async() => {
-            setUploadInfo(uploadTask) //  check this out
+            setUploadInfo(uploadTask); //  check this out
             setPicture(await getDownloadURL(uploadTask.snapshot.ref));
             setDidPhotoChange(true);
         });

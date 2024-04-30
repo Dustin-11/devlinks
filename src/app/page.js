@@ -12,10 +12,6 @@ export default function Signin() {
       setPage(prevPage => prevPage === 0 ? 1 : 0)
   }
 
-  useEffect(() => {
-    console.log(page);
-  }, [page])
-
   return (
     <main className="flex min-h-screen flex-col items-center p-6 font-customRegular md:justify-center md:bg-customLightGrey">
     <AuthHeader />
