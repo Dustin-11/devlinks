@@ -104,11 +104,11 @@ export default function ProfilePhoto({ setDidPhotoChange, trigger }) {
             <p className="text-customGrey">Add your details to create a personal touch to your profile.</p>
         </div>
         <div className="bg-customLightGrey my-4 mx-5 p-5 text-left rounded-lg flex flex-col md:flex-row md:py-0 md:justify-between">
-            <p className="block ">Profile Picture</p>
+            <p className="block md:mt-3">Profile Picture</p>
             <div className="md:w-3/5 md:flex md:gap-4">
                 <div className={` relative my-5 py-16 bg-customLightPurple rounded-xl text-center font-bold hover:cursor-pointer w-3/5 max-w-56 ${picture ? 'text-customWhite' : 'text-customPurple'}`} style={{backgroundImage: picture ? `url(${picture})` : 'none', backgroundSize: 'cover', backgroundPosition: 'center'}}
                      onClick={handleDivClick}>
-                          {picture && (<div className="absolute inset-0 bg-black bg-opacity-40"></div>)}
+                          {picture && (<div className="absolute inset-0 bg-black bg-opacity-40 rounded-xl"></div>)}
                     <div className="relative">
                         <UploadImage trigger={iconTrigger} />
                         <p className="mt-2">+ Upload Image</p>
