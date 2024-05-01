@@ -51,7 +51,8 @@ export default function CreateProfile ({ setDisplay }) {
             await setDoc(doc(db, 'users', userId), {
                 email: email,
                 password: password,
-                uid: userId
+                uid: userId,
+                shareable: true
             });
 
             console.log('User signed up: ', userCredential.user);
