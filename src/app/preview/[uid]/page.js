@@ -38,6 +38,7 @@ export default function Shareable({ params }) {
 
     useEffect(() => {
         getShareableData(params.uid);
+        console.log(params.uid);
     }, []);
     
     return(

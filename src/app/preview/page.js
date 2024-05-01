@@ -23,6 +23,7 @@ export default function Preview() {
 
     return(
         <div className="bg-customWhite h-screen w-screen md:bg-customLightGrey">
+            <AuthRedirect>
             <div className="md:border-2 md:bg-customPurple md:fixed md:w-full md:h-2/5 md:z-10 md:rounded-b-[36px]"></div>
             <PreviewHeader setDialog={(bool) => setDialog(bool)}></PreviewHeader>
             <main id="scroll-Container" className="bg-customWhite h-[calc(100vh-110px)] w-11/12 fixed bottom-4 
@@ -38,6 +39,7 @@ export default function Preview() {
                 <LinkIcon colorFlag={false}/>
                 <p className="text-customWhite">The link has been copied to your clipboard!</p>
             </div>}
+            </AuthRedirect>
         </div>
     )
 }
